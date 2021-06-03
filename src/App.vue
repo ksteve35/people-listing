@@ -17,7 +17,36 @@
     export default {
       data() {
         return {
-          
+          people: [{
+            firstName: "Kyle",
+            lastName: "Stevenson",
+            birthday: "2/25/1997",
+            bloodType: "B-"
+          },
+          {
+            firstName: "Joe",
+            lastName: "Smith",
+            birthday: "6/29/1995",
+            bloodType: "AB+"
+          },
+          {
+            firstName: "Jane",
+            lastName: "Doe",
+            birthday: "11/14/1999",
+            bloodType: "A+"
+          },
+          {
+            firstName: "Bill",
+            lastName: "Gates",
+            birthday: "10/28/1955",
+            bloodType: "B+"
+          },
+          {
+            firstName: "Steve",
+            lastName: "Jobs",
+            birthday: "2/24/1955",
+            bloodType: "O-"
+          }]
         };
       },
       components: {

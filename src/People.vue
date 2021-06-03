@@ -6,6 +6,7 @@
                 :key="index">
 
                 Person #{{ index }}
+                <button style="float:right;" @click="getPersonDetails(index)">Details</button>
                 <button style="float:right;" @click="editPerson(index)">Edit</button>
 
             </li>
@@ -15,9 +16,15 @@
 
 <script>
     export default {
+        props: [
+
+        ],
         methods: {
             editPerson(index) {
-                alert("Editing Person #" + index);
+                console.log("Editing Person #" + index);
+            },
+            getPersonDetails(index) {
+                console.log("Getting Person #" + index);
             }
         }
     }
