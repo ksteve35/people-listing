@@ -16,20 +16,14 @@
 
 <script>
     export default {
-        props: {
-            people: [{
-                firstName: { type: String},
-                lastName: { type: String},
-                birthday: { type: String},
-                bloodType: { type: String}
-            }]
-        },
+        props: ['people'],
         methods: {
             editPerson(index) {
-                console.log("Editing Person #" + index);
+                console.log("Editing " + this.people[index].firstName + " " + this.people[index].lastName + "\nFeature not yet implemented!");
             },
             getPersonDetails(index) {
-                console.log("Getting Person #" + index);
+                console.log("Getting " + this.people[index].firstName + " " + this.people[index].lastName);
+                this.$emit('displayDetails', this.people[index]);
             },
             personDisplayName(index) {
                 return this.people[index].lastName + ", " + this.people[index].firstName;

@@ -4,7 +4,7 @@
     <hr>
     <div class="row">
       <app-people :people="people"></app-people>
-      <app-person-details></app-person-details>
+      <app-person-details @displayDetails="showDetails($event)" :details="details"></app-person-details>
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@
             bloodType: "B-"
           },
           {
-            firstName: "Joe",
+            firstName: "John",
             lastName: "Smith",
             birthday: "6/29/1995",
             bloodType: "AB+"
@@ -46,8 +46,20 @@
             lastName: "Jobs",
             birthday: "2/24/1955",
             bloodType: "O-"
-          }]
+          }],
+          details: {
+            firstName: "Kyle",
+            lastName: "Stevenson",
+            birthday: "2/25/1997",
+            bloodType: "B-"
+          }
         };
+      },
+      methods: {
+        showDetails(event) {
+          this.details = event;
+          console.log(this.details);
+        }
       },
       components: {
           'app-header': Header,
