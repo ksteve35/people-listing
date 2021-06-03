@@ -3,7 +3,7 @@
     <app-header></app-header> 
     <hr>
     <div class="row">
-      <app-people></app-people>
+      <app-people :people="people"></app-people>
       <app-person-details></app-person-details>
     </div>
   </div>

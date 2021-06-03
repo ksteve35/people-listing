@@ -2,10 +2,10 @@
     <div class="col-xs-12 col-sm-6">
         <ul class="list-group">
             <li class="list-group-item"
-                v-for="index in 5"
+                v-for="(people, index) in people"
                 :key="index">
-
-                Person #{{ index }}
+                
+                {{ personDisplayName(index) }}
                 <button style="float:right;" @click="getPersonDetails(index)">Details</button>
                 <button style="float:right;" @click="editPerson(index)">Edit</button>
 
@@ -16,15 +16,23 @@
 
 <script>
     export default {
-        props: [
-
-        ],
+        props: {
+            people: [{
+                firstName: { type: String},
+                lastName: { type: String},
+                birthday: { type: String},
+                bloodType: { type: String}
+            }]
+        },
         methods: {
             editPerson(index) {
                 console.log("Editing Person #" + index);
             },
             getPersonDetails(index) {
                 console.log("Getting Person #" + index);
+            },
+            personDisplayName(index) {
+                return this.people[index].lastName + ", " + this.people[index].firstName;
             }
         }
     }
